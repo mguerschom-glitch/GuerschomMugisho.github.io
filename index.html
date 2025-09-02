@@ -55,11 +55,10 @@
       color: var(--text);
       line-height: 1.6;
     }
-    a { color: var(--brand); text-decoration: none; cursor: pointer; }
+    a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
     .wrap { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
-
+    /* Sidebar */
     .sidebar {
       position: sticky; top: 0; align-self: start; height: 100vh;
       padding: 28px; border-right: 1px solid var(--border); background: var(--bg);
@@ -68,24 +67,22 @@
     .menu { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
     .menu a { display: block; padding: 10px 12px; border-radius: 12px; background: var(--card); border: 1px solid var(--border); }
     .menu a:hover { background: #eef2ff; border-color: #c7d2fe; }
-
     .contact { margin-top: 18px; display: grid; gap: 8px; font-size: 0.95rem; }
-
+    /* Main */
     main { padding: 40px 48px; }
     section { background: var(--bg); border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 18px; padding: 24px; margin: 0 0 24px; }
     h1,h2 { margin: 0 0 12px; }
     p { margin: 0 0 12px; }
-
+    /* "Guerschom Mugisho" section */
     .hero { display: grid; grid-template-columns: 180px 1fr; gap: 20px; align-items: start; }
     .hero img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); }
-
+    /* Publications */
     .pubs li { margin-bottom: 10px; }
-
+    /* CV */
     .btn { display: inline-block; padding: 12px 14px; border-radius: 14px; background: var(--brand); color: #fff; font-weight: 600; box-shadow: var(--shadow); }
     .btn.outline { background: transparent; color: var(--brand); border: 1px solid var(--brand); }
-
     footer { padding: 28px 48px 48px; color: var(--muted); font-size: 0.9rem; }
-
+    /* Mobile */
     @media (max-width: 980px) {
       .wrap { grid-template-columns: 1fr; }
       .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
@@ -93,12 +90,13 @@
       .hero { grid-template-columns: 1fr; }
       .hero img { width: 140px; height: 140px; }
     }
-
+    /* Hide debate article by default for toggle */
     #debate-article { display: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- Sidebar with menus -->
     <aside class="sidebar" aria-label="Site navigation">
       <div class="brand">GM</div>
       <nav>
@@ -123,45 +121,150 @@
       </div>
     </aside>
 
+    <!-- Main content -->
     <main>
-      <!-- (contenu inchangé avant) -->
+      <!-- About -->
+      <section id="gm" aria-label="Guerschom Mugisho">
+        <h1>Guerschom Mugisho</h1>
+        <div class="hero">
+          <img src="profile.jpg" alt="Portrait of Guerschom Mugisho" />
+          <div>
+            <p>I am a Temporary Teaching and Research Assistant (ATER), currently completing my PhD in demography at Paris 1 Panthéon-Sorbonne University. My thesis, supervised by Armelle Andro (Paris 1 Panthéon-Sorbonne University) and Christophe Bergouignan (University of Bordeaux), examined the mechanisms through which conflict and conflict-related sexual violence affect fertility in the Great Lakes region.</p>
+            <p>I hold a <a href="https://sciences-sociales.unistra.fr/formation/master/demographie/parcours-demographie-PR458-14431?tab=cours" target="_blank" rel="noopener">Master’s degree in Demography</a> (University of Strasbourg), a <a href="http://sesstim.univ-amu.fr/sites/default/files/affiche-master-mqers.pdf" target="_blank" rel="noopener">Master’s degree in Biostatistics and Health Econometrics</a> (Aix-Marseille University), a <a href="https://iutparis-seine.u-paris.fr/wp-content/uploads/sites/3/2023/11/DU-Dataviz.pdf" target="_blank" rel="noopener">University Diploma in Data Visualisation</a> (University Institute of Technology of Paris – Rives de Seine), and a <a href="https://uea.ac.cd/faculte-des-sciences-economiques-et-de-gestion/" target="_blank" rel="noopener">Bachelor’s degree in Economics</a> (Université Évangélique en Afrique, DR Congo).</p>
+            <p>Affiliated with the Centre for Research in Demography at Paris 1 (<a href="https://cridup.pantheonsorbonne.fr/" target="_blank" rel="noopener">CRIDUP</a>), my research focuses on the effects of crises in a broad sense—such as conflicts, diseases (including epidemics and pandemics), and natural disasters—on fertility and family outcomes, as well as on the health of women and children.</p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Publications -->
+      <section id="publications" aria-label="Publications">
+        <h2>Publications</h2>
+
+        <h3>Peer‑reviewed Articles</h3>
+        <ul class="pubs">
+          <li>
+            Mugisho, G. (2025). <strong>How conflict shapes the impact of infant and child mortality on fertility in the Democratic Republic of the Congo.</strong> <em>Advances in Life Course Research</em>, 65, 100692. 
+            <a href="https://doi.org/10.1016/j.alcr.2025.100692" target="_blank" rel="noopener">https://doi.org/10.1016/j.alcr.2025.100692</a>
+          </li>
+          <li>
+            Mugisho, G. (2024). <strong>War, school dropout and adolescent motherhood in the Democratic Republic of the Congo: evidence from the 2007 and 2013/2014 Demographic and Health Surveys.</strong> <em>Journal of Population Research</em>, 41, 25. 
+            <a href="https://doi.org/10.1007/s12546-024-09345-y" target="_blank" rel="noopener">https://doi.org/10.1007/s12546-024-09345-y</a>
+          </li>
+          <li>
+            Mugisho, G.-M., Alexandre, A. B., &amp; Armelle, A. (2024). <strong>Individual and contextual determinants of early access to post-rape care: A retrospective cohort study of 4048 women in the Democratic Republic of Congo from 2014 to 2019.</strong> <em>Journal of Epidemiology and Population Health</em>, 72(4), 202534. 
+            <a href="https://doi.org/10.1016/j.jeph.2024.202534" target="_blank" rel="noopener">https://doi.org/10.1016/j.jeph.2024.202534</a>
+          </li>
+          <li>
+            Mugisho, G., Maroyi, R., &amp; Mukwege, D. (2024). <strong>Correlates of fertility desires in women with urogenital fistula in the Democratic Republic of Congo: a cross-sectional study of 1,646 women.</strong> <em>Reproductive Health</em>, 21, 99. 
+            <a href="https://doi.org/10.1186/s12978-024-01823-z" target="_blank" rel="noopener">https://doi.org/10.1186/s12978-024-01823-z</a>
+          </li>
+          <li>
+            Blanco‑Cazeaux, I., Calderón Bernal, L. P., Chaput, J., Gautron, M., Malroux, I., <strong>Mugisho, G.</strong>, et al. (2022). <strong>Unemployed adults forgoing healthcare in France.</strong> <em>Population</em>, 77(1), 77–116. 
+            <a href="https://doi.org/10.3917/popu.2201.0077" target="_blank" rel="noopener">https://doi.org/10.3917/popu.2201.0077</a>
+          </li>
+        </ul>
+
+        <h3>Articles Under Review</h3>
+        <ul>
+          <li>
+            Mugisho, G. <strong>Effect of exposure to conflict and conflict-related sexual violence on first marital and non-marital adolescent conception in the DR Congo.</strong> <em>Canadian Studies in Population</em>. Submitted 11 November 2024. Status: minor revision resubmitted.
+          </li>
+          <li>
+            Mugisho, G. <strong>Effect of conflict on first unions in Uganda.</strong> <em>Population Research and Policy Review</em>. Submitted 2 August 2025. Status: under review.
+          </li>
+          <li>
+            Mugisho, G. <strong>Effects of conflict on unwanted pregnancies in Uganda and Burundi: the mediating role of unmet need for family planning.</strong> <em>Population and Development Review</em>. Submitted 4 June 2025. Status: under review.
+          </li>
+        </ul>
+
+        <h3>Conference Presentations</h3>
+        <ul>
+          <li>
+            Mugisho, G. <strong>How conflict shapes the impact of infant and child mortality on fertility in the Democratic Republic of the Congo.</strong> Chaire Quetelet, <em>Measuring, Understanding and Explaining in Demography: Strengths, weaknesses and challenges in the 21st century</em>, Louvain‑la‑Neuve, November 19–21, 2025.
+          </li>
+          <li>
+            Mugisho, G. <strong>Effect of exposure to conflict and conflict-related sexual violence on first marital and non-marital adolescent conception in the DR Congo.</strong> Chaire Quetelet, <em>Behind and Beyond Numbers: Population Research Through Critical Lenses</em>, Louvain‑la‑Neuve, 7–8 novembre 2024.
+          </li>
+          <li>
+            Mugisho, G. <strong>Effet de l'exposition aux conflits et aux violences sexuelles liées aux conflits sur les premières unions en Ouganda : rôle modérateur des mobilités.</strong> XXIIe Colloque de l’Aidelf, Aveiro, Août 2024.
+          </li>
+          <li>
+            Mugisho, G. <strong>War, School dropout and adolescent fertility in the Democratic Republic of the Congo.</strong> Poster presentation, Population Association of America Conference, Columbus, April 2024 (non‑présenté).
+          </li>
+          <li>
+            Mugisho, G. <strong>War, School dropout and adolescent motherhood in the Democratic Republic of Congo.</strong> Poster presentation, 15th Conference of Young Demographers, Prague, February 2024.
+          </li>
+          <li>
+            Mugisho, G., Raha, M. <strong>Factors associated with Childbearing among women with unrepaired fistula.</strong> Poster presentation, 2023 Australasian Sexual and Reproductive Health Conference, Monday 18 – Wednesday 20 September 2023.
+          </li>
+          <li>
+            Mugisho, G. <strong>Effect of conflicts on first unions in Uganda.</strong> Population Association of America Applied Demography Conference, Annapolis, February 2023.
+          </li>
+          <li>
+            Mugisho, G. <strong>Evolution de la fécondité dans les pays d’Afrique centrale et de l’est affectés par les conflits : peut‑on lire les effets des conflits.</strong> XXIe Colloque de l’Aidelf, Athènes, mai 2022.
+          </li>
+        </ul>
+      </section>
+
+      <!-- CV -->
+      <section id="cv" aria-label="Curriculum Vitae">
+        <h2>CV</h2>
+        <p>
+          <a class="btn" href="20250829_CV_GUERSCHOM_MUGISHO.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn outline" href="#gm">Back to Profile</a>
+        </p>
+        <div style="margin-top:16px">
+          <object data="20250829_CV_GUERSCHOM_MUGISHO.pdf" type="application/pdf" width="100%" height="800">
+            <p>Your browser can't display the PDF. Please use the button above to download it.</p>
+          </object>
+        </div>
+      </section>
+
+      <!-- Blog Posts -->
+      <section id="blog" aria-label="Blog Posts">
+        <h2>Blog Posts</h2>
+        <ul>
+          <li><em>Coming soon.</em></li>
+        </ul>
+      </section>
+
+      <!-- Debate-provoking Statistics -->
       <section id="debate" aria-label="Debate-provoking Statistics">
-        <h2>Debate-provoking Statistics</h2>
+        <h2>Debate‑provoking Statistics</h2>
         <p>
           <em>This space will host rigorously documented, methodologically sound statistics that often spark public debate. Each item will include a brief methodological note, sources, and a short interpretation to encourage informed discussion.</em>
         </p>
         <ul class="pubs">
-          <li><a id="toggle-article">Sexe hors mariage en RD Congo : catholiques et protestantes, vraiment si différentes ?</a></li>
+          <li><a id="toggle-article" href="#debate-article">Sexe hors mariage en RD Congo : catholiques et protestantes, vraiment si différentes ?</a></li>
         </ul>
       </section>
 
-      <article id="debate-article" style="margin:24px 0 0; display:none">
-  <h3>Sexe hors mariage en RD Congo : catholiques et protestantes, vraiment si différentes ?</h3>
+      <article id="debate-article" style="margin:24px 0 0">
+        <h3>Sexe hors mariage en RD Congo : catholiques et protestantes, vraiment si différentes ?</h3>
 
-  <h4>Introduction</h4>
-  <p>Dans le christianisme, les rapports sexuels hors mariage sont fortement déconseillés. Cette note analyse la fréquence et l’évolution des rapports sexuels chez les femmes non mariées (célibataires, veuves ou divorcées) en République démocratique du Congo selon la religion. Son approche sort du cadre classique en socio-démographie, où la sexualité est vue comme déterminant de la fécondité et de la santé. Sans en être l’objectif principal, les analyses peuvent aussi aider les institutions religieuses à évaluer l’efficacité de leurs enseignements sur l’abstinence hors mariage.</p>
+        <h4>Introduction</h4>
+        <p>Dans le christianisme, les rapports sexuels hors mariage sont fortement déconseillés. Cette note analyse la fréquence et l’évolution des rapports sexuels chez les femmes non mariées (célibataires, veuves ou divorcées) en République démocratique du Congo selon la religion. Son approche sort du cadre classique en socio-démographie, où la sexualité est vue comme déterminant de la fécondité et de la santé. Sans en être l’objectif principal, les analyses peuvent aussi aider les institutions religieuses à évaluer l’efficacité de leurs enseignements sur l’abstinence hors mariage.</p>
 
-  <h4>Méthodologie</h4>
-  <p>L’étude s’appuie sur les données des Enquêtes Démographiques et de Santé (EDS) réalisées en RDC en 2007, 2013/2014 et 2023/2024, permettant ainsi de suivre l’évolution du phénomène sur près de deux décennies.</p>
-  <p>Seules les femmes non mariées ont été retenues dans l’échantillon, car ce sont elles qui, selon les normes religieuses, sont supposées s’abstenir de rapports sexuels.</p>
-  <p>Les analyses comparent principalement les femmes catholiques et protestantes, les deux confessions les plus représentées. Les autres religions, ainsi que les femmes se déclarant sans religion, ont été regroupées dans une catégorie « Autres ».</p>
-  <p>Les analyses sont stratifiées selon le statut matrimonial afin de comparer le phénomène étudié chez les filles et chez les veuves/divorcées.</p>
-  <p>Les répondantes n’ayant pas fourni d’information sur la variable d’intérêt (le temps écoulé depuis le dernier rapport sexuel) ont été exclues. Ce nombre est relativement élevé, en raison du caractère sensible de la question. L'approche adoptée dans l'étude consiste à analyser l'évolution, selon la confession religieuse, de la proportion des filles et des veuves/divorcées ayant eu un rapport sexuel dans les 30 jours précédant le jour de l'enquête.</p>
-  <p>Enfin, toutes les estimations ont été pondérées par les poids d’enquête afin de corriger les probabilités d’inclusion inégales et restituer la représentativité de la population cible; intégrer les ajustements de non-réponse et de post-stratification ; garantir la comparabilité temporelle et intergroupes (entre religions).  Les scripts utilisés sont disponibles sur demande.</p>
-  <p>L’échantillon final contient 9&nbsp;951 femmes dont 1 581 enquêtées en 2007, 3 177 enquêtées en 2013/2014 et 4 473 enquêtées en 2023/2024.</p>
+        <h4>Méthodologie</h4>
+        <p>L’étude s’appuie sur les données des Enquêtes Démographiques et de Santé (EDS) réalisées en RDC en 2007, 2013/2014 et 2023/2024, permettant ainsi de suivre l’évolution du phénomène sur près de deux décennies.</p>
+        <p>Seules les femmes non mariées ont été retenues dans l’échantillon, car ce sont elles qui, selon les normes religieuses, sont supposées s’abstenir de rapports sexuels.</p>
+        <p>Les analyses comparent principalement les femmes catholiques et protestantes, les deux confessions les plus représentées. Les autres religions, ainsi que les femmes se déclarant sans religion, ont été regroupées dans une catégorie « Autres ».</p>
+        <p>Les analyses sont stratifiées selon le statut matrimonial afin de comparer le phénomène étudié chez les filles et chez les veuves/divorcées.</p>
+        <p>Les répondantes n’ayant pas fourni d’information sur la variable d’intérêt (le temps écoulé depuis le dernier rapport sexuel) ont été exclues. Ce nombre est relativement élevé, en raison du caractère sensible de la question. L'approche adoptée dans l'étude consiste à analyser l'évolution, selon la confession religieuse, de la proportion des filles et des veuves/divorcées ayant eu un rapport sexuel dans les 30 jours précédant le jour de l'enquête.</p>
+        <p>Enfin, toutes les estimations ont été pondérées par les poids d’enquête afin de corriger les probabilités d’inclusion inégales et restituer la représentativité de la population cible; intégrer les ajustements de non-réponse et de post-stratification ; garantir la comparabilité temporelle et intergroupes (entre religions).  Les scripts utilisés sont disponibles sur demande.</p>
+        <p>L’échantillon final contient 9&nbsp;951 femmes dont 1 581 enquêtées en 2007, 3 177 enquêtées en 2013/2014 et 4 473 enquêtées en 2023/2024.</p>
 
-  <h4 id="resultats">Résultats</h4>
-  <p>En 2007, les femmes catholiques non mariées déclaraient plus fréquemment avoir eu des rapports sexuels en dehors du mariage. Toutefois, la tendance s’est inversée lors des enquêtes de 2013/2014 et de 2023/2024, où les femmes protestantes apparaissent désormais comme étant légèrement plus nombreuses à avoir eu des rapports sexuels hors mariage. Cette tendance s’observe aussi bien chez les jeunes célibataires que chez les veuves et divorcées (<a href="resultats.html">voir graphique</a>).</p>
+        <h4 id="resultats">Résultats</h4>
+        <p>En 2007, les femmes catholiques non mariées déclaraient plus fréquemment avoir eu des rapports sexuels en dehors du mariage. Toutefois, la tendance s’est inversée lors des enquêtes de 2013/2014 et de 2023/2024, où les femmes protestantes apparaissent désormais comme étant légèrement plus nombreuses à avoir eu des rapports sexuels hors mariage. Cette tendance s’observe aussi bien chez les jeunes célibataires que chez les veuves et divorcées (<a href="resultats.html">voir graphique</a>).</p>
 
-  <div class="graph-wrapper" style="margin:12px 0 18px">
-    <iframe title="Graphique – Résultats" src="resultats.html" loading="lazy" style="width:100%;height:520px;border:1px solid #e5e7eb;border-radius:12px"></iframe>
-    <p style="color:#6b7280;margin:6px 0 0">Si l’iframe ne s’affiche pas, ouvrez le graphique directement : <a href="resultats.html">resultats.html</a>.</p>
-  </div>
+        <div class="graph-wrapper" style="margin:12px 0 18px">
+          <iframe title="Graphique – Résultats" src="resultats.html" loading="lazy" style="width:100%;height:520px;border:1px solid #e5e7eb;border-radius:12px"></iframe>
+          <p style="color:#6b7280;margin:6px 0 0">Si l’iframe ne s’affiche pas, ouvrez le graphique directement : <a href="resultats.html">resultats.html</a>.</p>
+        </div>
 
-  <h4>Conclusion</h4>
-  <p>D’un point de vue religieux, ces résultats pourraient traduire une baisse de la pratique ou de l’adhésion aux enseignements chez les protestantes. Sur le plan socio-démographique, ils peuvent s’expliquer par des transformations générationnelles des comportements, l’élévation du niveau d’instruction, l’urbanisation, ainsi que par l’évolution des normes sociales et de l’ouverture culturelle. Ces explications méritent d’être discutées, et vos analyses ou observations peuvent contribuer à enrichir cette réflexion.</p>
-</article>
+        <h4>Conclusion</h4>
+        <p>D’un point de vue religieux, ces résultats pourraient traduire une baisse de la pratique ou de l’adhésion aux enseignements chez les protestantes. Sur le plan socio-démographique, ils peuvent s’expliquer par des transformations générationnelles des comportements, l’élévation du niveau d’instruction, l’urbanisation, ainsi que par l’évolution des normes sociales et de l’ouverture culturelle. Ces explications méritent d’être discutées, et vos analyses ou observations peuvent contribuer à enrichir cette réflexion.</p>
+      </article>
     </main>
   </div>
 
@@ -172,11 +275,24 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Toggle: show/hide the debate article on title click, without breaking anchor navigation
     const toggleLink = document.getElementById('toggle-article');
     const article = document.getElementById('debate-article');
-    toggleLink.addEventListener('click', () => {
-      article.style.display = (article.style.display === 'none' || article.style.display === '') ? 'block' : 'none';
-    });
+    if (toggleLink && article) {
+      toggleLink.addEventListener('click', function (e) {
+        // Allow default anchor jump to #debate-article but toggle visibility
+        // If currently hidden, show then scroll into view (default href covers it)
+        // If visible, hide and prevent extra jump
+        if (article.style.display === 'none' || getComputedStyle(article).display === 'none') {
+          article.style.display = 'block';
+        } else {
+          article.style.display = 'none';
+          // keep user at debate section top
+          e.preventDefault();
+          document.getElementById('debate').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
   </script>
 </body>
 </html>
