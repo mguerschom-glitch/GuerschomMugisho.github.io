@@ -326,5 +326,28 @@
       });
     }
   </script>
+
+  <script>
+    // Toggle: show/hide the second debate article on title click
+    (function(){
+      const toggleLink2 = document.getElementById('toggle-article-2');
+      const article2 = document.getElementById('debate-article-2');
+      if (toggleLink2 && article2) {
+        toggleLink2.addEventListener('click', function (e) {
+          // Toggle visibility (open/close) and keep user in the debate section
+          if (article2.style.display === 'none' || getComputedStyle(article2).display === 'none') {
+            article2.style.display = 'block';
+          } else {
+            article2.style.display = 'none';
+            e.preventDefault();
+            var anchor = document.getElementById('debate');
+            if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>
