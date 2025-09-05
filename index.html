@@ -323,24 +323,30 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Select all links inside the Debate-provoking Statistics section
-      document.querySelectorAll('#debate a[href^="#debate-article"]').forEach(link => {
-        link.addEventListener("click", function(event) {
-          event.preventDefault();
-          const targetId = this.getAttribute("href").substring(1);
-          const target = document.getElementById(targetId);
-          if (target.style.display === "none" || target.style.display === "") {
-            target.style.display = "block";
-          } else {
-            target.style.display = "none";
-          }
-        });
-      });
-
-      // Hide all articles initially
+      // Hide both debate articles initially
       document.querySelectorAll('article[id^="debate-article"]').forEach(article => {
         article.style.display = "none";
       });
+
+      // Toggle ONLY Article 1 when clicking its hyperlink title in the Debate section
+      const link1 = document.querySelector('#debate a[href="#debate-article"]');
+      if (link1) {
+        link1.addEventListener("click", function(event) {
+          event.preventDefault();
+          const a1 = document.getElementById("debate-article");
+          a1.style.display = (a1.style.display === "block") ? "none" : "block";
+        });
+      }
+
+      // Keep Article 2 behavior as-is (toggle on click)
+      const link2 = document.querySelector('#debate a[href="#debate-article-2"]');
+      if (link2) {
+        link2.addEventListener("click", function(event) {
+          event.preventDefault();
+          const a2 = document.getElementById("debate-article-2");
+          a2.style.display = (a2.style.display === "block") ? "none" : "block";
+        });
+      }
     });
   </script>
 
